@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Exhibits from '../components/Exhibits.astro';
+import Schedule from '../components/Schedule.astro';
+import Packages from '../components/Packages.astro';
+import Partners from '../components/Partners.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Header />
+  <Hero />
+  <About />
+  <Exhibits />
+  <Schedule />
+  <Packages />
+  <Partners />
+  <Contact />
+  <Footer />
+  
+  <!-- Scroll to top button -->
+  <button
+    id="to-top-button"
+    class="fixed bottom-6 right-6 z-50 p-3 bg-ocean-800 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-ocean-700"
+    aria-label="Back to top"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+</Layout>
+
+<script>
+  // Back to top button functionality
+  const toTopButton = document.getElementById('to-top-button');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      toTopButton?.classList.remove('opacity-0', 'invisible');
+      toTopButton?.classList.add('opacity-100', 'visible');
+    } else {
+      toTopButton?.classList.add('opacity-0', 'invisible');
+      toTopButton?.classList.remove('opacity-100', 'visible');
+    }
+  });
+  
+  toTopButton?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>

@@ -1,0 +1,280 @@
+---
+const exhibitorPackages = [
+  {
+    title: "Space Only Package",
+    price: "BHD 295/sqm",
+    description: "A stand contractor of your choice can be chosen to create a stand designed to meet your exact requirements and budget.",
+    features: [
+      "Flexible design options",
+      "Customized branding opportunities",
+      "Choose your own contractor",
+      "Scale to your specific needs",
+      "Best for established brands"
+    ],
+    color: "ocean"
+  },
+  {
+    title: "Stand Service Package",
+    price: "BHD 325/sqm",
+    description: "With stand service, you are getting a ready-to-use stand space, the ideal option to set up in a short span of time.",
+    features: [
+      "Pre-built professional stand",
+      "Basic furniture included",
+      "Power points included",
+      "Quick and easy setup",
+      "Optional extras available"
+    ],
+    color: "teal",
+    featured: true
+  },
+  {
+    title: "Marina Boat Show Package",
+    price: "From BHD 1,500",
+    description: "Display your boats at the exclusive Marina Boat Show area with package options based on boat size.",
+    features: [
+      "Prime marina location",
+      "Boat display space",
+      "Technical support",
+      "Dedicated visitor access",
+      "Marketing opportunities"
+    ],
+    color: "coral"
+  }
+];
+
+const sponsorshipTiers = [
+  {
+    title: "Diamond Sponsor",
+    limit: "Limited to 2 Sponsors",
+    price: "BHD 50,000",
+    features: [
+      "Premium 100 sqm exhibition space",
+      "Exclusive branding on main entrance",
+      "VIP lounge access",
+      "Priority speaking slot",
+      "Full-page advertisement in event catalog"
+    ],
+    color: "teal"
+  },
+  {
+    title: "Platinum Sponsor",
+    limit: "Limited to 3 Sponsors",
+    price: "BHD 35,000",
+    features: [
+      "Premium 75 sqm exhibition space",
+      "Premium branding placement",
+      "VIP event access",
+      "Speaking opportunity",
+      "Half-page advertisement in event catalog"
+    ],
+    color: "ocean"
+  },
+  {
+    title: "Gold Sponsor",
+    limit: "Limited to 4 Sponsors",
+    price: "BHD 25,000",
+    features: [
+      "50 sqm exhibition space",
+      "Strategic branding placement",
+      "Event passes",
+      "Panel participation opportunity",
+      "Quarter-page advertisement in event catalog"
+    ],
+    color: "coral"
+  }
+];
+
+const sponsorshipPackages = [
+  {
+    title: "Headline Sponsorship",
+    exclusivity: "EXCLUSIVE",
+    price: "BHD 75,000",
+    features: [
+      "Premium branding across all event materials",
+      "VIP access to all areas",
+      "Keynote speaking opportunity",
+      "Premium exhibition space included",
+      "Extensive media coverage"
+    ]
+  },
+  {
+    title: "WiFi Sponsorship",
+    exclusivity: "EXCLUSIVE",
+    price: "BHD 15,000",
+    features: [
+      "Branded WiFi login page",
+      "Custom WiFi network name",
+      "Data collection opportunities",
+      "High visibility to all attendees",
+      "Digital marketing integration"
+    ]
+  },
+  {
+    title: "Lanyard Sponsorship",
+    exclusivity: "EXCLUSIVE",
+    price: "BHD 20,000",
+    features: [
+      "Your brand on every attendee lanyard",
+      "Continuous visibility throughout event",
+      "Complementary with other promotions",
+      "High-retention branded item",
+      "Essential event item"
+    ]
+  },
+  {
+    title: "Lounge Sponsorship",
+    exclusivity: "Limited to 2 Sponsors",
+    price: "BHD 30,000",
+    features: [
+      "Branded VIP lounge area",
+      "Networking opportunities",
+      "Comfortable meeting space",
+      "Refreshment service options",
+      "Premium visibility location"
+    ]
+  },
+  {
+    title: "Automotive Sponsorship",
+    price: "BHD 25,000",
+    features: [
+      "Vehicle display opportunities",
+      "Test drive possibilities",
+      "Brand association with luxury marine market",
+      "High-net-worth audience exposure",
+      "Cross-promotional opportunities"
+    ]
+  }
+];
+---
+
+<section id="packages" class="py-20 bg-ocean-50">
+  <div class="container mx-auto px-4">
+    <!-- Exhibitor Packages -->
+    <div class="mb-20">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-ocean-900 mb-4">Exhibitor Packages</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          Choose the perfect exhibition package for your business needs
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {exhibitorPackages.map((pkg) => (
+          <div class={`rounded-lg overflow-hidden shadow-lg transition-transform hover:transform hover:scale-105 flex flex-col ${pkg.featured ? 'border-2 border-' + pkg.color + '-500 relative' : ''}`}>
+            {pkg.featured && (
+              <div class="absolute top-0 right-0 bg-teal-500 text-white px-4 py-1 text-sm font-bold">
+                POPULAR
+              </div>
+            )}
+            <div class={`bg-${pkg.color}-600 p-6 text-white`}>
+              <h3 class="text-xl font-bold mb-2">{pkg.title}</h3>
+              <p class="text-${pkg.color}-100 mb-4">{pkg.description}</p>
+              <div class="text-2xl font-bold">{pkg.price}</div>
+            </div>
+            <div class="bg-white p-6 flex-grow">
+              <ul class="space-y-3">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class={`h-5 w-5 text-${pkg.color}-500 mr-2 mt-0.5`} viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="bg-white p-6 border-t border-gray-200">
+              <a href="#contact" class={`block w-full py-3 px-6 text-center rounded-full bg-${pkg.color}-600 hover:bg-${pkg.color}-700 text-white font-medium transition-colors`}>
+                Request Information
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- Sponsorship Tiers -->
+    <div class="mb-20">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-ocean-900 mb-4">Sponsorship Tiers</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          Premium sponsorship opportunities for maximum brand exposure
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {sponsorshipTiers.map((tier) => (
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class={`bg-${tier.color}-600 p-6 text-white`}>
+              <h3 class="text-xl font-bold mb-2">{tier.title}</h3>
+              <p class="text-sm mb-4">{tier.limit}</p>
+              <div class="text-2xl font-bold">{tier.price}</div>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3">
+                {tier.features.map((feature) => (
+                  <li class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class={`h-5 w-5 text-${tier.color}-500 mr-2 mt-0.5`} viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="p-6 border-t border-gray-200">
+              <a href="#contact" class={`block w-full py-3 px-6 text-center rounded-full bg-${tier.color}-600 hover:bg-${tier.color}-700 text-white font-medium transition-colors`}>
+                Become a {tier.title}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- Additional Sponsorship Opportunities -->
+    <div>
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-ocean-900 mb-4">Additional Sponsorship Opportunities</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          Increase the visibility of your brand and reach thousands of high-net-worth consumers, corporates, royalties and visitors globally
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sponsorshipPackages.map((pkg) => (
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="p-6 border-b border-gray-100">
+              <h3 class="text-xl font-bold text-ocean-800 mb-1">{pkg.title}</h3>
+              <div class="flex justify-between items-center">
+                {pkg.exclusivity && (
+                  <span class="inline-block bg-coral-100 text-coral-800 text-xs px-3 py-1 rounded-full font-medium">
+                    {pkg.exclusivity}
+                  </span>
+                )}
+                <span class="text-lg font-bold text-ocean-600">{pkg.price}</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ocean-500 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="p-6 border-t border-gray-100">
+              <a href="#contact" class="block w-full py-2 px-4 text-center rounded-full bg-ocean-600 hover:bg-ocean-700 text-white font-medium transition-colors">
+                Inquire About Sponsorship
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
