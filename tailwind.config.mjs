@@ -45,7 +45,7 @@ export default {
         }
       },
       fontFamily: {
-        'sans': ['Josefin Sans', 'system-ui', 'sans-serif'],
+        'sans': ['Brandon Grotesque', 'system-ui', 'sans-serif'],
       },
       animation: {
         'wave': 'wave 3s ease-in-out infinite',

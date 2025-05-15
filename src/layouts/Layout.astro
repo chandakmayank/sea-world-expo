@@ -7,10 +7,116 @@
     <meta name="generator" content={Astro.generator} />
     <title>SEA WORLD EXPO 2025 | The First Marine Expo in the Arab World</title>
     <meta name="description" content="Join us at SEA WORLD EXPO 2025, the first marine expo in the Arab world, featuring diving, water sports, marine technology, and conservation at Bahrain Harbour.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-Thin.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-Thin.woff') format('woff');
+        font-weight: 100;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-ThinItalic.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-ThinItalic.woff') format('woff');
+        font-weight: 100;
+        font-style: italic;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-Light.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-Light.woff') format('woff');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-LightItalic.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-LightItalic.woff') format('woff');
+        font-weight: 300;
+        font-style: italic;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-Regular.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-RegularItalic.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-RegularItalic.woff') format('woff');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-Medium.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-MediumItalic.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-MediumItalic.woff') format('woff');
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-Bold.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-BoldItalic.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-BoldItalic.woff') format('woff');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-Black.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-Black.woff') format('woff');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('/fonts/HvDTrial_BrandonGrotesque-BlackItalic.woff2') format('woff2'),
+             url('/fonts/HvDTrial_BrandonGrotesque-BlackItalic.woff') format('woff');
+        font-weight: 900;
+        font-style: italic;
+        font-display: swap;
+      }
+    </style>
   </head>
   <body class="font-sans antialiased">
     <slot />
