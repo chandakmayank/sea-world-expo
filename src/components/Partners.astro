@@ -3,109 +3,167 @@ const mainPartners = [
   {
     name: "InfraCorp",
     logo: "/logos/infracopr-logo.png",
-    type: "Main Partner"
+    type: "Main Partner",
+    website: "https://infracorp.bh/",
   },
   {
     name: "GFH",
     logo: "/logos/GFH-Logo-RGB.png",
-    type: "Main Partner"
-  }
+    type: "Main Partner",
+    website: "https://gfh.com/",
+  },
 ];
 
 const organizingPartner = {
   name: "ORKA Projects",
   logo: "/logos/orka_projects.jpeg",
-  type: "Organizing Partner"
+  type: "Organizing Partner",
+  website: "http://orka.bh/",
 };
 
 const officialSupporter = {
   name: "Ministry of Tourism",
   logo: "/logos/bah_tourism.png",
-  type: "Official Supporter"
+  type: "Official Supporter",
+  website: "https://www.bahrain.com/",
 };
 
 const additionalPartners = [
   {
     name: "BDVT",
-    logo: "/logos/bdvt.png"
+    logo: "/logos/bdvt.png",
+    website: "https://www.instagram.com/bdvt.bh/",
   },
   {
     name: "Ideaworks Middle East",
-    logo: "/logos/ideaworks.png"
+    logo: "/logos/ideaworks.png",
+    website: "https://www.ideaworks.me/",
   },
   {
     name: "Dallah",
-    logo: "/logos/Dallah-Logo-Red.png"
-  }
+    logo: "/logos/Dallah-Logo-Red.png",
+    website: "https://dallahpromo.com/",
+  },
 ];
 
 // Duplicate array to create scrolling effect
-const scrollingPartners = [...additionalPartners, ...additionalPartners];
+const scrollingPartners = [
+  ...additionalPartners,
+  ...additionalPartners,
+  ...additionalPartners,
+];
 ---
 
 <section id="sponsors" class="py-16 bg-white border-t border-b border-gray-200">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-ocean-900 mb-4">Our Partners</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-ocean-900 mb-4">
+        Our Partners
+      </h2>
       <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-        Proud to work with leading organizations dedicated to marine innovation and conservation
+        Proud to work with leading organizations dedicated to marine innovation
+        and conservation
       </p>
     </div>
-    
+
     <!-- Main Partners -->
     <div class="mb-12">
-      <h3 class="text-2xl font-bold text-center mb-8 text-ocean-800">Main Partners</h3>
+      <h3 class="text-2xl font-bold text-center mb-8 text-ocean-800">
+        Main Partners
+      </h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {mainPartners.map((partner) => (
-          <div class="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg">
-            <img 
-              src={partner.logo} 
-              alt={`${partner.name} logo`} 
-              class="max-w-full max-h-24 object-contain"
-            />
-          </div>
-        ))}
+        {
+          mainPartners.map((partner) => (
+            <div class="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg">
+              <a
+                href={partner.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <img
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  class="max-w-full max-h-24 object-contain"
+                />
+              </a>
+            </div>
+          ))
+        }
       </div>
     </div>
-    
+
     <!-- Organizing Partner and Official Supporter -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
       <div>
-        <h3 class="text-xl font-bold text-center mb-6 text-ocean-800">Organizing Partner</h3>
-        <div class="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg">
-          <img 
-            src={organizingPartner.logo} 
-            alt={`${organizingPartner.name} logo`} 
-            class="max-w-full max-h-20 object-contain"
-          />
+        <h3 class="text-xl font-bold text-center mb-6 text-ocean-800">
+          Organized and Managed by
+        </h3>
+        <div
+          class="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg"
+        >
+          <a
+            href={organizingPartner.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block"
+          >
+            <img
+              src={organizingPartner.logo}
+              alt={`${organizingPartner.name} logo`}
+              class="max-w-full max-h-20 object-contain"
+            />
+          </a>
         </div>
       </div>
       <div>
-        <h3 class="text-xl font-bold text-center mb-6 text-ocean-800">Official Supporter</h3>
-        <div class="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg">
-          <img 
-            src={officialSupporter.logo} 
-            alt={`${officialSupporter.name} logo`} 
-            class="max-w-full max-h-20 object-contain"
-          />
+        <h3 class="text-xl font-bold text-center mb-6 text-ocean-800">
+          Official Supporter
+        </h3>
+        <div
+          class="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg"
+        >
+          <a
+            href={officialSupporter.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block"
+          >
+            <img
+              src={officialSupporter.logo}
+              alt={`${officialSupporter.name} logo`}
+              class="max-w-full max-h-20 object-contain"
+            />
+          </a>
         </div>
       </div>
     </div>
-    
+
     <!-- Additional Partners Scrolling Section -->
     <div>
-      <h3 class="text-xl font-bold text-center mb-8 text-ocean-800">Additional Partners</h3>
+      <h3 class="text-xl font-bold text-center mb-8 text-ocean-800">
+        Additional Partners
+      </h3>
       <div class="overflow-hidden">
         <div class="flex animate-scroll">
-          {scrollingPartners.map((partner) => (
-            <div class="flex-shrink-0 mx-8 w-32 h-32 flex items-center justify-center bg-white rounded-lg shadow-sm">
-              <img 
-                src={partner.logo} 
-                alt={`${partner.name} logo`} 
-                class="max-w-full max-h-16 object-contain"
-              />
-            </div>
-          ))}
+          {
+            scrollingPartners.map((partner) => (
+              <div class="flex-shrink-0 mx-8 w-32 h-32 flex items-center justify-center bg-white rounded-lg shadow-sm">
+                <a
+                  href={partner.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    class="max-w-full max-h-16 object-contain"
+                  />
+                </a>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -121,7 +179,7 @@ const scrollingPartners = [...additionalPartners, ...additionalPartners];
       transform: translateX(-50%);
     }
   }
-  
+
   .animate-scroll {
     animation: scroll 30s linear infinite;
   }
