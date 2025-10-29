@@ -1,63 +1,82 @@
 ---
-const mainPartners = [
-  // {
-  //   name: "InfraCorp",
-  //   logo: "/logos/infracopr-logo.png",
-  //   type: "Main Partner",
-  //   website: "https://infracorp.bh/",
-  // },
+import { nan } from "astro:schema";
 
+const partners = [
   {
     name: "GFH",
     logo: "/logos/GFH-Logo-RGB.png",
-    type: "Main Partner",
+    category: "Main Partner",
     website: "https://gfh.com/",
   },
   {
     name: "Masar",
     logo: "/logos/masar.png",
-    type: "Main Partner",
+    category: "Maritime Partner",
     website: "https://masargroup.bh",
-  }
-];
-
-const organizingPartner = {
-  name: "ORKA Projects",
-  logo: "/logos/orka_projects.jpeg",
-  type: "Organizing Partner",
-  website: "http://orka.bh/",
-};
-
-const officialSupporter = {
-  name: "Ministry of Tourism",
-  logo: "/logos/bah_tourism.png",
-  type: "Official Supporter",
-  website: "https://www.bahrain.com/",
-};
-
-const additionalPartners = [
+  },
   {
-    name: "BDVT",
-    logo: "/logos/bdvt.png",
-    website: "https://www.instagram.com/bdvt.bh/",
+    name: "Ministry of Interior",
+    logo: "/logos/min-interior.png",
+    category: "Governmental Partner & Supporter",
+    website: "https://www.interior.gov.bh/",
+  },
+  {
+    name: "ORKA Projects",
+    logo: "/logos/orka_projects.jpeg",
+    category: "Organizing Partner",
+    website: "http://orka.bh/",
+  },
+  {
+    name: "Gulf Hotel",
+    logo: "/logos/gulf-hotel.webp",
+    category: "Hospitality Partner",
+    website: "https://www.gulfhotelbahrain.com/",
+  },
+  {
+    name: "Red Bull",
+    logo: "/logos/Red-Bull-Logo.png",
+    category: "Sports Entertainment Partner",
+    website: "https://www.redbull.com/",
+  },
+  {
+    name: "CALO",
+    logo: "/logos/calo.png",
+    category: "Healthy Meals Partner",
+    website: "https://www.calo.bh/",
   },
   {
     name: "Ideaworks Middle East",
     logo: "/logos/ideaworks.png",
+    category: "IT Partner",
     website: "https://www.ideaworks.me/",
   },
+
+  {
+    name: "FACT",
+    logo: "/logos/fact.jpeg",
+    category: "Magazine Partner",
+    website: "https://fact-magazine.com",
+  },
+
   {
     name: "Dallah",
     logo: "/logos/Dallah-Logo-Red.png",
+    category: "Promotion Partner",
     website: "https://dallahpromo.com/",
   },
-];
 
-// Duplicate array to create scrolling effect
-const scrollingPartners = [
-  ...additionalPartners,
-  ...additionalPartners,
-  ...additionalPartners,
+  {
+    name: "Captain Club",
+    logo: "/logos/TCC_Ver_Primary_RGB.png",
+    category: "Boat Club Partner",
+    website: "https://www.instagram.com/thecaptainsclub/",
+  },
+  {
+    name: "BDVT",
+    logo: "/logos/bdvt.png",
+    category: "Additional Partner",
+    website: "https://www.instagram.com/bdvt.bh/",
+  },
 ];
 ---
 
@@ -73,121 +92,35 @@ const scrollingPartners = [
       </p>
     </div>
 
-    <!-- Main Partners -->
-    <div class="mb-12">
-      <h3 class="text-2xl font-bold text-center mb-8 text-ocean-800">
-        Main Partners
-      </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {
-          mainPartners.map((partner) => (
-            <div class="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg">
+    <!-- Partners Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      {
+        partners.map((partner) => (
+          <div class="group relative p-8 hover:scale-105 transition-transform duration-300">
+            <div class="flex flex-col items-center justify-center h-full min-h-[120px]">
               <a
                 href={partner.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="block"
+                class="block w-full h-full flex items-center justify-center"
               >
                 <img
                   src={partner.logo}
                   alt={`${partner.name} logo`}
-                  class="max-w-full max-h-24 object-contain"
+                  class="max-w-full max-h-24 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
               </a>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-
-    <!-- Organizing Partner and Official Supporter -->
-    <div class="flex justify-center mb-12">
-      <div class="max-w-md">
-        <h3 class="text-xl font-bold text-center mb-6 text-ocean-800">
-          Organized and Managed by
-        </h3>
-        <div
-          class="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg"
-        >
-          <a
-            href={organizingPartner.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block"
-          >
-            <img
-              src={organizingPartner.logo}
-              alt={`${organizingPartner.name} logo`}
-              class="max-w-full max-h-20 object-contain"
-            />
-          </a>
-        </div>
-      </div>
-      <!-- <div>
-        <h3 class="text-xl font-bold text-center mb-6 text-ocean-800">
-          Official Supporter
-        </h3>
-        <div
-          class="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg"
-        >
-          <a
-            href={officialSupporter.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block"
-          >
-            <img
-              src={officialSupporter.logo}
-              alt={`${officialSupporter.name} logo`}
-              class="max-w-full max-h-20 object-contain"
-            />
-          </a>
-        </div>
-      </div> -->
-    </div>
-
-    <!-- Additional Partners Scrolling Section -->
-    <div>
-      <h3 class="text-xl font-bold text-center mb-8 text-ocean-800">
-        Additional Partners
-      </h3>
-      <div class="overflow-hidden">
-        <div class="flex animate-scroll">
-          {
-            scrollingPartners.map((partner) => (
-              <div class="flex-shrink-0 mx-8 w-32 h-32 flex items-center justify-center bg-white rounded-lg shadow-sm">
-                <a
-                  href={partner.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="block"
-                >
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
-                    class="max-w-full max-h-16 object-contain"
-                  />
-                </a>
+              
+              <!-- Category badge - only visible on hover -->
+              <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="inline-block px-3 py-1 text-xs font-medium bg-ocean-900 text-white rounded text-center">
+                  {partner.category}
+                </span>
               </div>
-            ))
-          }
-        </div>
-      </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
-
-<style>
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  .animate-scroll {
-    animation: scroll 30s linear infinite;
-  }
-</style>
